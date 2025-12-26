@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickURL - Modern URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-link"></i> QuickURL
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="nav-actions">
+                <div class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <section id="hero">
+            <header class="header">
+                <h1 class="title">
+                    <i class="fas fa-link"></i> QuickURL
+                </h1>
+                <p class="subtitle">Shorten, share, and track your URLs</p>
+            </header>
+        </section>
+        
+        <section id="features" class="features-section">
+            <h2 class="section-title">Amazing Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt feature-icon"></i>
+                    <h3>Lightning Fast</h3>
+                    <p>Generate short URLs in milliseconds with our optimized service.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Secure & Reliable</h3>
+                    <p>Enterprise-grade security to keep your links safe and private.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>Detailed Analytics</h3>
+                    <p>Track clicks, locations, and user engagement for your links.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>Mobile Optimized</h3>
+                    <p>Works perfectly on all devices with responsive design.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <h2 class="section-title">About QuickURL</h2>
+            <div class="about-content">
+                <p>QuickURL is a powerful, fast, and free tool to shorten URLs and generate custom short links. Our service helps you share long URLs easily across social media, emails, and other platforms.</p>
+                <p>With advanced analytics, custom aliases, and QR code generation, QuickURL provides everything you need for effective link management.</p>
+            </div>
+        </section>
+
+        <main class="main-content">
+            <div class="url-shortener-card">
+                <div class="input-section">
+                    <div class="input-group">
+                        <input type="url" id="urlInput" placeholder="Paste your long URL here..." autocomplete="off">
+                        <button id="shortenBtn" class="btn-primary">
+                            <i class="fas fa-cut"></i> Shorten URL
+                        </button>
+                    </div>
+                    
+                    <div class="custom-alias-section">
+                        <label for="customAlias">Custom Alias (optional)</label>
+                        <div class="input-group">
+                            <input type="text" id="customAlias" placeholder="Enter custom alias..." autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Shortening your URL...</p>
+                </div>
+
+                <div class="result-section" id="resultSection" style="display: none;">
+                    <div class="result-card">
+                        <div class="url-display">
+                            <span id="shortUrl"></span>
+                            <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="result-actions">
+                            <button class="btn-secondary" id="openBtn" title="Open in new tab">
+                                <i class="fas fa-external-link-alt"></i> Open
+                            </button>
+                            <button class="btn-secondary" id="qrBtn" title="Generate QR Code">
+                                <i class="fas fa-qrcode"></i> QR Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qr-modal" id="qrModal" style="display: none;">
+                    <div class="modal-content">
+                        <span class="close" id="closeModal">&times;</span>
+                        <h3>QR Code for Shortened URL</h3>
+                        <div id="qrCodeContainer" class="qr-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <div class="section-header">
+                    <h2>Your Shortened URLs</h2>
+                    <button id="clearHistoryBtn" class="btn-danger" title="Clear all history">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+                
+                <div class="history-list" id="historyList">
+                    <!-- History items will be added here dynamically -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="toast-container" id="toastContainer">
+        <!-- Toast messages will appear here -->
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>QuickURL</h3>
+                <p>Shorten, share, and track your URLs with ease.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://github.com/Adithyakp86" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with ❤️ by <a href="https://github.com/Adithyakp86" target="_blank">Adithyakp86</a> &copy; 2025 QuickURL. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

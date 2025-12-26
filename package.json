@@ -1,0 +1,32 @@
+{
+  "name": "quickurl",
+  "version": "1.0.0",
+  "description": "A modern, responsive URL shortener web application built with pure HTML, CSS, and JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve -s .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "url-shortener",
+    "javascript",
+    "html",
+    "css",
+    "responsive",
+    "frontend"
+  ],
+  "author": "QuickURL",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/quickurl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/quickurl/issues"
+  },
+  "homepage": "https://github.com/your-username/quickurl#readme"
+}
